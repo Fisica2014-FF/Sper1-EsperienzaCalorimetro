@@ -1,6 +1,343 @@
 Qui ci sono i programmi usati per l'analisi dei dati
 
 \begin{verbatim}
+Calcolo del Cx
 
+
+#include <iostream>
+#include <cmath>
+int main ()
+{
+	using namespace std;
+	double Cx;
+	double sCx;
+	double mx;
+	double smx;
+	double ma;
+	double sma;
+	double Ca;
+	double mr;
+	double smr;
+	double Cr;
+	double sCr;
+	double Kter;
+	double sKter;
+	double ta;
+	double sta;
+	double tf;
+	double stf;
+	double t0;
+	double st0;
+	cout << "Inserire massa agitatore e vaso con relativo errore: ";
+	cin >> mr >> smr;
+	cout << "Inserire massa alluminio con relativo errore: ";
+	cin >> mx >> smx;
+	cout << "Inserire calore specifico acqua ";
+	cin >> Ca;
+	cout << "Inserire massa acqua con relativo errore ";
+	cin >> ma >> sma;
+	cout << "Inserire calore specifico rame stagnato con relativo errore: ";
+	cin >> Cr >> sCr;
+	cout << "Inserire capacità termica del termometro con relativo errore: 
+";
+	cin >> Kter >> sKter;
+	cout << "Inserire la temperatura dell'aceua con relativo errore: ";
+	cin >> ta >> sta;
+	cout << "Inserire temperatura iniziale con relativo errore: ";
+	cin >> t0 >> st0;
+	cout << "Inserire temperatura finale con relativo errore: ";
+	cin >> tf >> stf;
+	Cx = ( ( (ma * Ca ) + (mr * Cr) + Kter ) * abs(tf - ta) ) / ( mx * 
+abs(tf -t0) );
+	double ddma = ( Ca * abs(tf - ta) ) / ( mx * abs(tf - t0));
+	double ddmr = ( Cr * abs(tf - ta) ) / ( mx * abs(tf - t0));
+	double ddCr = ( mr * abs(tf - ta) ) / ( mx * abs(tf - t0));
+	double ddKter = abs(tf - ta) / ( mx * abs(tf - t0));
+	double ddtf =  ( ( (ma * Ca) + (mr * Cr) + Kter ) * (ta - t0) ) / (mx * 
+(t0 - tf) * (t0 - tf) );
+	double ddta = - ( (ma *Ca) + (mr * Cr) + Kter ) / ( mx * ( tf - t0));
+	double ddmx = - ( ( (ma * Ca ) + (mr * Cr) + Kter ) * abs(tf - ta) ) / ( 
+mx *  mx * abs(tf -t0) );
+	double ddt0 = ( ( (ma * Ca ) + (mr * Cr) + Kter ) * abs(tf - ta) * mx ) 
+/ ( mx * mx * (tf - t0) * (tf - t0));
+	sCx = sqrt ((ddma * ddma * sma * sma) +
+			(ddmr * ddmr * smr * smr) + (ddKter * ddKter * sKter * 
+sKter) +
+			(ddCr * ddCr * sCr * sCr) + (ddtf * ddtf * stf * stf) +
+			(ddta * ddta * sta * sta) + (ddmx * ddmx * smx * smx) + 
+(ddt0 * ddt0 * st0 * st0) );
+	cout << Cx << " pm " << sCx;
+	return 0;
+}
+
+
+
+Media Pesata
+ 
+//
+//  Created by Simone Frau on 22/03/14.
+//
+//
+
+#include <iostream>
+#include <cmath>
+#include <fstream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main ()
+{
+    int n;
+    cout << "dire di quanti valor si vuole calcolare la media" << endl;
+    cin >> n;
+    double* misure = new double [n];
+    for (int i = 0 ; i < n ; i++)
+    {
+        cout << "inserire valore "<< i << " della media" << endl;
+        cin >> misure[i];
+    }
+
+    double* sigme = new double [n];
+    for (int i = 0 ; i < n ; i++)
+    {
+        cout << "inserire valore "<< i << " della sigma" << endl;
+        cin >> sigme[i];
+    }
+    
+    double sommavalsig;
+    for (int i = 0 ; i < n ; i++)
+    {
+        sommavalsig += (misure[i]/sigme[i]);
+    }
+    
+    double sommak;
+    for (int i = 0 ; i < n ; i++)
+    {
+        sommak += (1/sigme[i]);
+    }
+    
+    double mediapesata;
+    mediapesata = (1/sommak)*(sommavalsig);
+    
+    cout << " Media pesata: " << mediapesata << endl;
+    
+    double errormediapesata;
+    errormediapesata = sqrt(1/sommak);
+    
+    cout << " Error media pesata: " << errormediapesata << endl;
+    
+    return 0;
+}
+
+Media, Scarto, Sigma
+
+#include <dirent.h>
+#include <iostream>
+#include <cmath>
+#include <fstream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+int main ()
+{
+
+    string path = "/Users/FrodoFrau/Documents/Università/Fisica Sperimentale 
+teoria/Laboratorio/DATI/";
+    
+    DIR *dir = opendir( path.c_str() );
+    if (!dir)
+    {
+        cerr << "Dir not fnd" << endl;
+        exit(1);
+    }
+    dirent *entry;
+    
+    while ((entry = readdir(dir)))
+    {
+        cout << "Found directory entry: "
+        << entry->d_name << endl;
+    }
+    cout << "Di quale file vuoi fare la Media Aritmetica?" << endl;
+    
+    string filename;
+    getline (cin, filename);
+    bool flag = 0;
+    closedir(dir);
+    
+    
+    path += filename;
+    
+    int dimensione = 0;
+    double valori;
+    
+    fstream fin ( path.c_str(), fstream::in );
+
+    while (fin >> valori )
+    {
+        dimensione++;
+    }
+    fin.close();
+    
+    fin.open( path.c_str(), fstream::in );
+    
+    double* misure = new double [dimensione];
+    for( int i = 0 ; i < dimensione ; i++ )
+    {
+        fin>>misure[i];
+    }
+    
+    double sommatoria;
+    for (int i = 0 ; i < dimensione ; i++)
+    {
+        sommatoria +=  misure[i];
+    }
+    double media = sommatoria/dimensione;
+    cout << "Media: " << media << endl;
+    
+    double differenza;
+    for (int i = 0 ; i < dimensione ; i++)
+    {
+        differenza += (misure[i]-media) * (misure[i]-media);
+    }
+    double Scarto = sqrt(differenza/(dimensione));
+    cout << "Scarto: " << Scarto << endl;
+    
+    double Sigma = sqrt(differenza/(dimensione-1));
+    cout << "Sigma " << Sigma << endl;
+    
+    double ErroreScarto = Scarto/sqrt(dimensione);
+    cout << "ErroreMedia " << ErroreScarto << endl;
+    
+    return 0;
+}
+
+
+Compatibilità.h
+
+//
+//  Created by Simone Frau & Chiappara Davide on 13/01/14.
+//
+//
+
+#ifndef _Compatibilita__h
+#define _Compatibilita__h
+
+#include <dirent.h>
+#include <iostream>
+#include <cmath>
+#include <fstream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+
+void Compatibilità ()
+{
+    
+    double media_a;
+    double media_b;
+    double sigma_a;
+    double sigma_b;
+    
+    cout << "inserire prima media" << endl;
+    cin >> media_a;
+    cout << "inserire seconda media" << endl;
+    cin >> media_b;
+    cout << "inserire primo sigma" << endl;
+    cin >> sigma_a;
+    cout << "inserire secondo sigma" << endl;
+    cin >> sigma_b;
+    double Compatibilità = ( abs ( media_a - media_b ) / ( sqrt ( sigma_a * 
+sigma_a + sigma_b * sigma_b ) ) );
+    
+    
+    cout << Compatibilità << endl;
+    
+    
+}
+            
+        
+#endif
+
+
+Interpolazione
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main ()
+{
+	cout << "Si digitino il numero delle coppie di cui fare la 
+interpolazione lineare" << endl;
+	int dimensione;
+	cin >> dimensione;
+	double *misurex = new double [dimensione];
+	cout << "Si inseriscano le x" << endl;
+	for (int i=0 ; i < dimensione ; i++ )
+	{
+		cin >> misurex[i];
+	}
+    double *misurey = new double [dimensione];
+	cout << "Si inseriscano le y" << endl;
+		for (int i=0 ; i < dimensione ; i++ )
+	{
+		cin >> misurey[i];
+	}
+	double delta;
+	double sommaQUADx = 0;
+	for (int i = 0 ; i < dimensione ; i++)
+	{
+		sommaQUADx += ( misurex[i] * misurex[i] );
+	}
+	double sommax = 0;
+	for ( int i = 0 ; i < dimensione ; i ++)
+	{
+		sommax += misurex[i];
+	}
+	double sommaxQUAD = sommax * sommax;
+	delta = (dimensione * sommaQUADx) - sommaxQUAD;
+	double a,b;
+	double sommay = 0;
+	for ( int i = 0 ; i < dimensione ; i ++)
+	{
+		sommay += misurey[i];
+	}
+	double sommaxy = 0;
+	for ( int i = 0 ; i < dimensione ; i ++)
+	{
+		sommaxy += misurey[i] * misurex[i];
+	}
+	a = ( 1 / delta ) * ( ( sommaQUADx * sommay ) - ( sommax * sommaxy ) );
+	b = ( 1 / delta ) * ( ( ( dimensione * ( sommaxy ) ) - ( sommax * sommay 
+) ));
+	double sigmay;
+	double sommasigma;
+	for ( int i = 0 ; i < dimensione ; i++ )
+	{
+		sommasigma += ( (a + ( b * misurex[i] ) -misurey[i] ) * (a + ( b 
+* misurex[i] ) - misurey[i] ) );
+	}
+	sigmay = sqrt ( sommasigma / ( dimensione -2 ) );
+    
+    double sigmab = (sqrt ( dimensione/delta )) * sigmay;
+    double sigmaa = (sqrt ( sommaQUADx/delta )) * sigmay;
+
+    
+	cout << "La a vale: " << a << endl;
+	cout << "La b vale: " << b << endl;
+	cout << "La sigma vale: " << sigmay << endl;
+    cout << "La sigma di b vale " << sigmab << endl;
+    cout << "La sigma di a vale " << sigmaa << endl;
+
+                       
+	return 0;
+}
 
 \end{verbatim}
