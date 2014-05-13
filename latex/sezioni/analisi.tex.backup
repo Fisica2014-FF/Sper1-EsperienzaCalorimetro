@@ -1,18 +1,58 @@
-\[\sigma _{mx} = 0.01 g \]
-\[\sigma_{mr+ag} = 0.02 g \]
+Erano forniti i seguenti dati:
+\begin{itemize}
+ \item Calore specifico del rame stagnato: $c_r = (0.093 \pm  0.001) \frac{cal}{g \gradi{K}}$,
+ \item Capacità equivalente termometro: $k_{term} = (2.20 \pm 0.05) \frac{cal}{\gradi{K}}$,
+ \item Calore specifico acqua: $c_a = 1 \frac{cal}{g \gradi{K}}$
+\end{itemize}
+%Calore specifico del rame stagnato: $c_r = 0.093 \pm  0.001$,
+%Capacità equivalente termometro: $k_{term} = 2.20 \pm 0.05$,
+%Calore specifico acqua: $c_a = 1$
+%$c_r = (0.093 \pm  0.001) \frac{cal}{g \gradi{K}}$, \\
+%$k_{term} = (2.20 \pm 0.05) \frac{cal}{\gradi{K}}$, \\
+%$c_a = 1 \frac{cal}{g \gradi{K}}$
+Usando i seguenti valori come errori, e propagandoli nella successiva equazione,
+\[\sigma _{m_x} = 0.01 g \]
+\[\sigma_{m_r+ag} = 0.02 g \]
+\begin{equation}
+ C_x = \frac{(m_a c_c + m_{r+ag} c_{r+ag} + K_{term}) |T_f - T_{0,a}|}{m_x |T_f - T_x|}
+\end{equation}
+è risultato tale valore:
+\begin{equation}
+\overline{C}_x = (0.12 \pm 0.04) \frac{cal}{g \gradi{K}}
+\end{equation}
+0.196065 pm 0.0081028  compatibilità = 1.24255
+0.0922982 pm 0.0041609 compatibilità = 1.0801
+0.120956 pm 0.0047847 compatibilità = 0.433844
+0.124326 pm 0.00556601 compatibilità = 0.357296
 
-\[C_x = \frac{(m_a c_c + m_{r+ag} c_{r+ag} + K_{term}) |T_f - T_{0,a}|}{m_x |T_f - T_x|}\]
-\[\bar{C_x} = (0.12 \pm 0.04) cal/g\]
-\[\bar{C_x}^{(2)} = 0.14 \pm 0.04 cal/g\]
+\begin{tabella}
+	\centering
+	
+	\begin{tabular}{ccc}
+	    \toprule
+	    & $C_x$ & $\sigma$  \\ \midrule
+	    \emph{Test 1} & 0.196 & 0.008  \\ \midrule
+	    \emph{Test 2} & 0.092 & 0.004  \\ \midrule
+	    \emph{Test 3} & 0.120 & 0.005  \\ \midrule
+	    \emph{Test 4} & 0.124 & 0.006  \\ 
+	    \bottomrule
+	\end{tabular}
+	
+	\caption{Risultati parziali}
+	\label{tab:ad}
+\end{tabella}
+Poichè il secondo test è fuori scala, il calcolo è stato rifatto senza di esso ed è stato ottenuto invece questo valore:
+\begin{equation}
+  \overline{C}_x^{(2)} = 0.14 \pm 0.04 \frac{cal}{g \gradi{K}}
+\end{equation}
 Si considera più attendibile la seconda media pesata per i motivi di cui seguito discussi.
-
-\[\lambda_{bar{C^2_x}1} = 1.2 \]
-\[\lambda_{bar{C^2_x}2} = 0.4 \]
-\[\lambda_{bar{C^2_x}3} = 0.4 \]
+Ecco le compatibilità
+\[\lambda_{\overline{C}^{(2)}_{x1}} = 1.2 \frac{cal}{g \gradi{K}} \]
+\[\lambda_{\overline{C}^{(2)}_{x2}} = 0.4 \frac{cal}{g \gradi{K}} \]
+\[\lambda_{\overline{C}^{(2)}_{x3}} = 0.4 \frac{cal}{g \gradi{K}} \]
 
 L'esperimento rivela un valore abbastanza in linea con la teoria. Durante l'esperimento diversi fattori
 possono aver influenzato i dati che sono stati raccolti, tra i quali:
-
 \begin{itemize}
 \item Influenza dell'ambiente sull'acqua: l'ambiente ha decisamente influenzato le misure che sono state prese, ciò si può
 riconoscere in primis dalle diverse temperature ambientali registrate nell'acqua. Dal primo all'
@@ -24,17 +64,17 @@ variata di circa $0.3\gradi C$ tra un campione e l'altro. Per considerare questa
  a tale problema la misura della temperatura è stata abbassata di $1 \gradi C$ e si è considerato un errore di 
 $1.5 \gradi C$.
 \item Influenza del non perfetto isolamento del calorimetro: Il calorimetro non era perfettamente isolato,
- ma la temperatura tendeva a scendere a causa di disperisioni. Per ovviare a questo problema non è stato preso come
+ ma la temperatura tendeva a scendere a causa di dispersioni. Per ovviare a questo problema non è stato preso come
  massimo valore di temperatura raggiunto il massimo valore misurato, ma l'intercetta della retta interpolante
  gli ultimi valori di temperatura misurati (cioè quelli misurati durante il raffreddamento del calorimetro, comunque
-non molto diversi).
+non molto diversi), considerando la perdita di calore lineare.
 \end{itemize}
 Inoltre sono stati presi diversi provvedimenti per la limitazione di errori casuali che potevano essere sottostimati
  a causa del fatto che alcune misure non sono state sufficientemente ripetute. In particolare, l'errore delle masse è
  stato stimato a partire dalle esigue misure ripetute: misurando le masse prima di ogni esperimento, oltre ad
  aver ridotto la probabilità di presenza di eventuali gocce d'acqua residue sui materiali che avrebbero influenzato la
  misurazione successiva, si è permesso il calcolo diretto della sigma su un campione di misure ripetute.
- I valori ottenuti, sebbene risultino forse non ottimamente compatibili, si rivelano effettivamente buoni come campione
+ I valori ottenuti, si rivelano effettivamente buoni come campione
  di stima del calore specifico.
  è stata leggermente problematica la lettura dei valori di temperatura, infatti non è stato semplicissimo per gli sperimentatori
  indagare in quale preciso istante la temperatura cambiava di una tacca di lettura. Comunque si è agito per
@@ -48,5 +88,7 @@ Inoltre sono stati presi diversi provvedimenti per la limitazione di errori casu
  media delle grandezze misurate per poi ottenere direttamente un valore unico.
  Il secondo test risulta effettivamente poco compatibile con altri test effettuati, probabilmente a causa di un errore
  ottenuto in sede sperimentale: la troppo bassa quantità d'acqua non ha ricoperto totalmente il cilindro che,
- parzialmente all'aria, ha creato delle condizioni non ottimamente interpretate dalle analisi effettuate.
+ parzialmente all'aria, ha creato delle condizioni non ottimamente interpretate dalle analisi effettuate,
+ ciò è riconoscibile da una temperatura finale decisamente fuori range considerando la quantità d'acqua e gli altri esperimenti 
+ effettuati.
  
