@@ -16,15 +16,26 @@
 
 \maketitle % Produce il titolo a partire dai comandi \title, \author e \date
 
-\tableofcontents % Prepara l'indice generale
+\vspace{15mm}
+\begin{center}
+\includegraphics[width=0.6\textwidth]{calorimeter}
+\end{center}
 
+\vfill
 % Le varie sezioni
 %\section{Obiettivi}
 \begin{abstract}
+	\noindent
 	\input{./sezioni/obiettivi.tex}
 \end{abstract}
 
-\section{Descrizione dell'apparato strumentale}
+\newpage
+
+\tableofcontents % Prepara l'indice generale
+
+%\begin{multicols}{2}
+
+\section{Apparato strumentale}
 	\input{./sezioni/descrizione_app_strumentale.tex}
 
 \section{Metodologia di misura}
@@ -33,12 +44,17 @@
 \newpage
 \section{Presentazione dei dati}			
 	\subsection{Tabelle}
+	\begin{multicols}{2}
 	\input{./sezioni/pres_dati_tabelle.tex}
-	
+	\end{multicols}
 	\clearpage
 	\subsection{Grafici}
 	\input{./sezioni/pres_dati_grafici.tex}
-		
+	
+\clearpage
+\section{Analisi dei dati}
+	\input{./sezioni/analisi.tex}
+
 \section{Conclusioni}
 	\input{./sezioni/conclusioni.tex}
 	
@@ -53,5 +69,6 @@
 % \label{fig:spazio1}
 %\end{figure}
 
+%\end{multicols}
 
 \end{document}

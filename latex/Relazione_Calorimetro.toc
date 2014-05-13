@@ -1,8 +1,0 @@
-\select@language {italian}
-\contentsline {section}{\numberline {I}Descrizione dell'apparato strumentale}{1}
-\contentsline {section}{\numberline {II}Metodologia di misura}{1}
-\contentsline {section}{\numberline {III}Presentazione dei dati}{2}
-\contentsline {subsection}{\numberline {I}Tabelle}{2}
-\contentsline {subsection}{\numberline {II}Grafici}{3}
-\contentsline {section}{\numberline {IV}Conclusioni}{3}
-\contentsline {section}{\numberline {V}Codice}{3}

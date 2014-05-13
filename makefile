@@ -8,7 +8,6 @@ TEMPLATE_SCRIPT = $(wildcard ./gnuplot/*.templatescript)
 relazione: $(PDF_RELAZIONE)
 	echo "Faccio la relazione..."
 	cp $(PDF_RELAZIONE) ./
-	xdg-open *.pdf
 
 # Da aggiungere le tabelle
 $(PDF_RELAZIONE): grafici

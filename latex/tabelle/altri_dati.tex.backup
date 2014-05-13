@@ -1,0 +1,9 @@
+\begin{tabular}{cccccc}
+\toprule
+ & $T_a$ & $T_0$ & $m_r$ & $m_x$ & $m_a$ \\ \midrule
+\emph{Test 1} & 20.2 & 98.6 & 57.92 & 81.73 & 124.06 \\ \midrule
+\emph{Test 2} & 20.4 & 98.6 & 57.92 & 81.70 & 62.85 \\ \midrule
+\emph{Test 3} & 20.9 & 98.8 & 57.89 & 81.71 & 66.70 \\ \midrule
+\emph{Test 4} & 21.3 & 98.8 & 57.88 & 81.72 & 85.01 \\ \midrule
+$\sigma$ & 0.3 & 1.5 & 0.02 & 0.01 & 0.03 \\ \bottomrule
+\end{tabular}

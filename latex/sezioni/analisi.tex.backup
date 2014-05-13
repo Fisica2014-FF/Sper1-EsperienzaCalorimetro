@@ -1,0 +1,52 @@
+\[\sigma _{mx} = 0.01 g \]
+\[\sigma_{mr+ag} = 0.02 g \]
+
+\[C_x = \frac{(m_a c_c + m_{r+ag} c_{r+ag} + K_{term}) |T_f - T_{0,a}|}{m_x |T_f - T_x|}\]
+\[\bar{C_x} = (0.12 \pm 0.04) cal/g\]
+\[\bar{C_x}^{(2)} = 0.14 \pm 0.04 cal/g\]
+Si considera più attendibile la seconda media pesata per i motivi di cui seguito discussi.
+
+\[\lambda_{bar{C^2_x}1} = 1.2 \]
+\[\lambda_{bar{C^2_x}2} = 0.4 \]
+\[\lambda_{bar{C^2_x}3} = 0.4 \]
+
+L'esperimento rivela un valore abbastanza in linea con la teoria. Durante l'esperimento diversi fattori
+possono aver influenzato i dati che sono stati raccolti, tra i quali:
+
+\begin{itemize}
+\item Influenza dell'ambiente sull'acqua: l'ambiente ha decisamente influenzato le misure che sono state prese, ciò si può
+riconoscere in primis dalle diverse temperature ambientali registrate nell'acqua. Dal primo all'
+ultimo test la temperatura è variata di $ \approx 1.1 \gradi C$. Questo vuol dire che mediamente la temperatura è 
+variata di circa $0.3\gradi C$ tra un campione e l'altro. Per considerare questa influenza si 
+è preso tale numero come l'errore sulla sulla temperatura dell'acqua.
+\item Influenza dell'ambiente sull'alluminio: il cilindro di alluminio si è raffreddato nel tragitto che porta
+ dal riscaldatore che ha misurato la temperatura al calorimetro nel quale esso è stato immerso. Per ovviare
+ a tale problema la misura della temperatura è stata abbassata di $1 \gradi C$ e si è considerato un errore di 
+$1.5 \gradi C$.
+\item Influenza del non perfetto isolamento del calorimetro: Il calorimetro non era perfettamente isolato,
+ ma la temperatura tendeva a scendere a causa di disperisioni. Per ovviare a questo problema non è stato preso come
+ massimo valore di temperatura raggiunto il massimo valore misurato, ma l'intercetta della retta interpolante
+ gli ultimi valori di temperatura misurati (cioè quelli misurati durante il raffreddamento del calorimetro, comunque
+non molto diversi).
+\end{itemize}
+Inoltre sono stati presi diversi provvedimenti per la limitazione di errori casuali che potevano essere sottostimati
+ a causa del fatto che alcune misure non sono state sufficientemente ripetute. In particolare, l'errore delle masse è
+ stato stimato a partire dalle esigue misure ripetute: misurando le masse prima di ogni esperimento, oltre ad
+ aver ridotto la probabilità di presenza di eventuali gocce d'acqua residue sui materiali che avrebbero influenzato la
+ misurazione successiva, si è permesso il calcolo diretto della sigma su un campione di misure ripetute.
+ I valori ottenuti, sebbene risultino forse non ottimamente compatibili, si rivelano effettivamente buoni come campione
+ di stima del calore specifico.
+ è stata leggermente problematica la lettura dei valori di temperatura, infatti non è stato semplicissimo per gli sperimentatori
+ indagare in quale preciso istante la temperatura cambiava di una tacca di lettura. Comunque si è agito per
+ ridurre gli errori di parallasse e di non coordinamento tra gli sperimentatori impegnati.
+ La propagazione errori è stata effettuata con l'approssimazione attraverso le derivate parziali al primo ordine.
+ Sono stati provati diversi approcci per l'analisi dati: per esempio, si è provato a rappresentare i grafici al
+ contrario (cioè scambiando variabile indipendente e dipendente, ossia tempo e temperatura), ma tale analisi rivelava
+ dei valori di intercetta i quali errori erano più alti (infatti gli errori andavano propagati, sebbene l'utilizzo
+ della stima della covarianza). Inoltre è stato preferito un approccio di stima del calore specifico attraverso
+ i vari campioni e poi di media pesata dei valori ottenuti perché non sarebbe stato fisicamente sensato fare una
+ media delle grandezze misurate per poi ottenere direttamente un valore unico.
+ Il secondo test risulta effettivamente poco compatibile con altri test effettuati, probabilmente a causa di un errore
+ ottenuto in sede sperimentale: la troppo bassa quantità d'acqua non ha ricoperto totalmente il cilindro che,
+ parzialmente all'aria, ha creato delle condizioni non ottimamente interpretate dalle analisi effettuate.
+ 

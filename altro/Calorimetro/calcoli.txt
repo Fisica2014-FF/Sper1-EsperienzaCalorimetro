@@ -1,0 +1,11 @@
+\[\sigma _mx = 0.01 g \]
+\[\sigma_mr+ag = 0.02 g \]
+
+\[C_x = frac{(m_a c_c + m_{r+ag} c_{r+ag} + K_term) \abs{T_f - T_{0,a}}}{m_x \abs{T_f - T_x}}\]
+\[\bar{C_x} = (0.12 \pm 0.04) cal/g\]
+\[bar{C_x}(senza considerare il test 2) = 0.14 \pm 0.04 cal/g\]
+Si considera più attendibile la seconda media pesata per i motivi di cui seguito discussi.
+
+\[\lambda_{bar{C_x}1} = 1.2 \]
+\[\lambda_{bar{C_x}2} = 0.4 \]
+\[\lambda_{bar{C_x}3} = 0.4 \]
