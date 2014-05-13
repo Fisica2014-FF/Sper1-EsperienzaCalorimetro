@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.1)  13 MAY 2014 18:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.5.1)  13 MAY 2014 19:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1530,7 +1530,11 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@grafico=\count188
    defining Unicode char U+00B0 (decimal 176)
 )
-(./Relazione_Calorimetro_Chiappara_Frau_Forcher.aux)
+(./Relazione_Calorimetro_Chiappara_Frau_Forcher.aux
+
+LaTeX Warning: Label `tab:ad' multiply defined.
+
+)
 \openout1 = `Relazione_Calorimetro_Chiappara_Frau_Forcher.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -1547,8 +1551,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 15.
 LaTeX Font Info:    Try loading font information for LGR+cmr on input line 15.
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel-greek/lgrcmr.fd
+ (/usr/share/texlive/texmf-dist/tex/generic/babel-greek/lgrcmr.fd
 File: lgrcmr.fd 2008/06/17 v2.3 Greek Computer Modern
 )
 LaTeX Font Info:    ... okay on input line 15.
@@ -1880,17 +1883,17 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  25516 strings out of 493307
  504607 string characters out of 6139906
- 554223 words of memory out of 5000000
+ 554262 words of memory out of 5000000
  28220 multiletter control sequences out of 15000+600000
  52562 words of font info for 235 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 65i,11n,57p,496b,740s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,12n,57p,496b,740s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
@@ -1900,7 +1903,7 @@ lic/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/upl
 b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
 Output written on Relazione_Calorimetro_Chiappara_Frau_Forcher.pdf (15 pages, 1
-38916 bytes).
+38985 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
